@@ -47,3 +47,26 @@ function getNumColor(num) {
 
   return "white";
 }
+
+function noBlockW(row,col1,col2) {
+  for(var i = col1+1; i <col2;i++){
+    if(arr[row][i] !== 0){
+      return false
+    }
+  }
+  return true
+}
+
+function noBlockH(col, row1, row2) {
+  for(var i = row1 + 1; i < row2; i++){
+    if(arr[i][col] !== 0){
+      return false
+    }
+  }
+  return true
+}
+
+function addScore(num) {
+  var per = parseInt($('#score').html())
+  $('#score').html(per + num)
+}
